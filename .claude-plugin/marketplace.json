@@ -1,0 +1,12 @@
+{
+  "name": "sdccd-travel-skills",
+  "description": "SDCCD travel paperwork skill for Claude: Travel Authorizations and Expense Reports.",
+  "owner": { "name": "<GITHUB-OWNER> (community-maintained, not an official SDCCD release)" },
+  "plugins": [
+    {
+      "name": "sdccd-travel",
+      "source": ".",
+      "description": "File SDCCD TAs and Expense Reports in myportal, stopping before submit."
+    }
+  ]
+}
