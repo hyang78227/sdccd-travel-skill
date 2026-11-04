@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Rebuilds dist/sdccd-travel.zip after a personal-data check.
+# Builds dist/sdccd-travel-claude.zip and dist/sdccd-travel-chatgpt.zip after a personal-data check.
 # Optional: list private terms (your name, home address, chartfield values,
 # past TA/ER IDs), one per line, in scripts/denylist.local.txt. That file is
 # git-ignored and never committed.

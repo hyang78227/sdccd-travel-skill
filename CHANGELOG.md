@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.0 — 2026-11-04
+
+- Two downloads from one source: `dist/sdccd-travel-chatgpt.zip` and `dist/sdccd-travel-claude.zip`. Only `reference/platform.md` differs (browser, memory and file tools).
+- ChatGPT support: runs in ChatGPT Work with the desktop app's built-in browser; installs as a ChatGPT Skill or as a folder for plans without Skills; the traveler chooses the PDF at the attach step.
+- Portal playbook: click-and-type fallback when page scripts aren't available.
+- Setup: read-only path to past TAs and ERs verified on a live dry run (Nov 2026).
+
 ## 1.0.0 — 2026-11-04
 
 First team version.

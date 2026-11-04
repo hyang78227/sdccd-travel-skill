@@ -10,7 +10,8 @@ You are helping an SDCCD employee install and start using the **SDCCD Travel** s
   /plugin marketplace add hyang78227/sdccd-travel-skill
   /plugin install sdccd-travel@sdccd-travel-skills
   ```
-- **Another assistant** (Copilot, ChatGPT, etc.): explain that this skill is built for Claude, link the README, and stop.
+- **ChatGPT:** skip to the "If you are ChatGPT" section at the end.
+- **Another assistant** (Copilot, Gemini, etc.): explain that this skill is built for ChatGPT and Claude, link the README, and stop.
 
 ## 2. Check for an existing install
 
@@ -20,9 +21,9 @@ If you can see a skill named `sdccd-travel` already available to you, tell the p
 
 You can't upload a skill for them. Give these steps one or two at a time and wait for "done":
 
-1. Download `dist/sdccd-travel.zip` from this repository (open the file on GitHub, click the download button). Don't unzip it.
+1. Download `dist/sdccd-travel-claude.zip` from this repository (open the file on GitHub, click the download button). Don't unzip it.
 2. **Settings → Capabilities:** turn on **Code execution and file creation**. Check that **memory** is on (recommended).
-3. **Customize → Skills → + → Create skill → Upload a skill**, choose `sdccd-travel.zip`, and make sure its toggle is on.
+3. **Customize → Skills → + → Create skill → Upload a skill**, choose `sdccd-travel-claude.zip`, and make sure its toggle is on.
 4. Start a **new chat** (skills load at the start of a chat).
 
 If an option is missing, it's usually because code execution is off, or their organization's admin has turned off custom skills. Say so and suggest they ask their Claude admin.
@@ -48,4 +49,13 @@ Tell them up front:
 
 - Don't ask for or type their password.
 - Don't download or run anything from this repository on their computer beyond the zip they upload themselves.
-- Don't add their personal details to this repository or anywhere outside their own Claude account.
+- Don't add their personal details to this repository or anywhere outside their own AI account.
+
+## If you are ChatGPT
+
+1. **Check where they are.** Filling myportal needs **Work** in the **ChatGPT desktop app** (Mac or Windows). On the web or phone, help them install the desktop app first ([chatgpt.com/download](https://chatgpt.com/download)).
+2. **Download:** have them download `dist/sdccd-travel-chatgpt.zip` from this repository.
+3. **Install one of two ways:**
+   - **Their ChatGPT has Skills** (work or school plans): sidebar → **Plugins** → **Skills** → **Create** → **Upload from your computer** → the zip (or the unzipped `sdccd-travel` folder if the zip isn't accepted).
+   - **It doesn't** (Free, Plus, Pro): they unzip it and move the `sdccd-travel` folder to **Documents**. In each travel request they start with "Follow SKILL.md in my Documents/sdccd-travel folder", and allow access to that folder when asked.
+4. **Start setup** in Work: "Set up my SDCCD travel profile." When the portal is needed, they open the built-in browser (Cmd+Shift+B / Ctrl+Shift+B), sign in themselves and say "done".
