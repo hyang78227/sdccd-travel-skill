@@ -7,7 +7,7 @@ You are helping an SDCCD employee install and start using the **SDCCD Travel** s
 - **Claude app (claude.ai web, desktop or mobile):** go to step 2.
 - **Claude Code** (terminal, IDE, or the desktop app's Code tab): run these, then skip to step 4.
   ```text
-  /plugin marketplace add <GITHUB-OWNER>/sdccd-travel-skill
+  /plugin marketplace add hyang78227/sdccd-travel-skill
   /plugin install sdccd-travel@sdccd-travel-skills
   ```
 - **Another assistant** (Copilot, ChatGPT, etc.): explain that this skill is built for Claude, link the README, and stop.

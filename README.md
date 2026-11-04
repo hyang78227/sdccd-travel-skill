@@ -22,7 +22,7 @@ The first time you use it, it sets itself up for you: it asks for your name, add
 ## Install (about 3 minutes)
 
 > **Prefer to have Claude walk you through it?** Open a new chat in Claude and send:
-> *"Help me install the SDCCD travel skill from https://github.com/&lt;GITHUB-OWNER&gt;/sdccd-travel-skill — follow its AGENTS.md."*
+> *"Help me install the SDCCD travel skill from https://github.com/hyang78227/sdccd-travel-skill — follow its AGENTS.md."*
 
 1. **Download the skill file:** [`dist/sdccd-travel.zip`](dist/sdccd-travel.zip) (click it, then the download button). Don't unzip it.
 2. **Turn on code execution:** in Claude, go to **Settings → Capabilities** and turn on **Code execution and file creation**. While you're there, check that **memory** is on.
@@ -34,7 +34,7 @@ The first time you use it, it sets itself up for you: it asks for your name, add
 
 ### Claude Code users
 ```text
-/plugin marketplace add <GITHUB-OWNER>/sdccd-travel-skill
+/plugin marketplace add hyang78227/sdccd-travel-skill
 /plugin install sdccd-travel@sdccd-travel-skills
 ```
 Turn on auto-update for the marketplace in `/plugin` → Marketplaces to get new versions automatically.

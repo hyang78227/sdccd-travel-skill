@@ -1,7 +1,7 @@
 {
   "name": "sdccd-travel-skills",
   "description": "SDCCD travel paperwork skill for Claude: Travel Authorizations and Expense Reports.",
-  "owner": { "name": "<GITHUB-OWNER> (community-maintained, not an official SDCCD release)" },
+  "owner": { "name": "hyang78227 (community-maintained, not an official SDCCD release)" },
   "plugins": [
     {
       "name": "sdccd-travel",
