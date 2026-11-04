@@ -4,9 +4,7 @@ Runs when no travel profile exists, or when the traveler says "set up / update /
 
 ## Step 1. Check the browser (P1)
 
-The portal steps need one of:
-- **Claude in Chrome** (the browser extension): can fill forms **and** upload the attachment PDF. The traveler must be signed in to myportal in that Chrome.
-- **The Claude desktop app's built-in browser pane**: can fill every form field but **cannot upload files**. The traveler attaches the PDF themselves (five clicks; P7).
+The portal steps need a browser you can control; `platform.md` lists which ones this platform offers and what each can do (fill forms, upload the PDF).
 
 Check which is connected and record it as the profile's browser. If neither, say so plainly: setup questions (Step 2) can still be done now; the Maps measurement and the history step (Step 4) wait until a browser is connected.
 

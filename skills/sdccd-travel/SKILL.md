@@ -7,10 +7,7 @@ description: "File SDCCD travel paperwork in the myportal PeopleSoft portal for 
 
 This skill works for any SDCCD employee, in **Claude** or in **ChatGPT**. It never contains anyone's personal details: each traveler's details live in their own **travel profile**, built the first time they use it.
 
-**Where you are running decides your tools** (details in P1 of `reference/portal-playbook.md`):
-- **Claude:** a browser via Claude in Chrome or the Claude desktop app's built-in browser; Claude memory for the profile.
-- **ChatGPT:** ChatGPT Work with the ChatGPT desktop app's built-in browser; ChatGPT memory for the profile.
-- **No browser you can control:** say so plainly, do everything up to the portal (questions, mileage, the PDF, the full line list), and give the traveler the lines to enter themselves.
+**Read `reference/platform.md` first.** It says which AI this copy is packaged for and which browser, memory and file tools you have. Everything else here is the same on every AI. If you have no browser you can control, say so plainly, do everything up to the portal (questions, mileage, the PDF, the full line list), and give the traveler the lines to enter themselves.
 
 It has three workflows:
 
@@ -25,6 +22,7 @@ Read these when the workflow calls for them:
 - `reference/district-rules.md`: rules that apply to everyone, which the profile can never override
 - `reference/portal-playbook.md`: how to drive myportal (P1–P10), verified on real runs
 - `reference/profile-template.md`: the profile's exact format
+- `reference/platform.md`: this AI's browser, memory and file tools
 
 ## Ground rules (every workflow)
 

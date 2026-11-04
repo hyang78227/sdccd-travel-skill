@@ -3,10 +3,11 @@
 Everything below was verified on real runs in Sep–Oct 2026. Follow it rather than rediscovering it. If the portal has changed, note what changed and tell the maintainer (see README).
 
 ## P1. Before touching the portal — check the browsers
-- **Two browsers, different powers.** The Claude desktop **browser pane** (tools named `mcp__Claude_Browser__*` or `mcp__remote-devices__Claude_Browser__*`) can drive every form field but **cannot upload files**. **Claude in Chrome** (`mcp__claude-in-chrome__*`) can upload via `file_upload`, but only if the traveler is signed in to the portal **in Chrome**. Call `list_connected_browsers` first and tell the traveler up front which one will be used and whether attaching will be their step.
-- **Sign-in is always the traveler's.** Never type a password. If a tab lands on `login.microsoftonline.com`, open the portal home (`https://myportal.sdccd.edu/psp/IHPRD/EMPLOYEE/ERP/h/?tab=DEFAULT`), bring the pane to the front with `preview_start`, and ask the traveler to sign in. If they can't see it: it's the browser pane on the right side of the Claude window.
-- **Site approvals.** The pane may ask approval for `myportal.sdccd.edu`, `fsprd.sdccd.edu`, `google.com` on every action; batch work into few `javascript_tool` calls to keep prompts down.
-- Sessions time out after 60 min of inactivity; a "Your session is about to expire" banner has an **OK** button — click it via JS.
+- **Which browser, and what it can do** (fill forms, upload files, run scripts in the page) is in `platform.md`. Check it first and tell the traveler up front which browser you'll use and whether attaching the PDF will be their step.
+- **Sign-in is always the traveler's.** Never type a password. If a tab lands on `login.microsoftonline.com`, open the portal home (`https://myportal.sdccd.edu/psp/IHPRD/EMPLOYEE/ERP/h/?tab=DEFAULT`), bring the browser to the front, and ask the traveler to sign in and reply "done".
+- **Site approvals.** The browser may ask approval for `myportal.sdccd.edu`, `fsprd.sdccd.edu`, `google.com`; wait for the traveler, and batch work into few steps.
+- **No script access in the page?** The ids below still identify fields and buttons. Click and type by the visible labels instead; the form sits inside a frame, and each change takes ~5 s to round-trip to the server, so wait before the next field.
+- Sessions time out after 60 min of inactivity; a "Your session is about to expire" banner has an **OK** button — click it.
 - Keep the portal in **its own tab**. Do Maps, email and drive work in another tab.
 
 ## P2. Getting to the form (direct component URLs are blocked)

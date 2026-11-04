@@ -6,7 +6,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-FILES=(skills README.md AGENTS.md CHANGELOG.md .claude-plugin scripts/build.sh)
+FILES=(skills platforms README.md AGENTS.md CHANGELOG.md .claude-plugin scripts/build.sh)
 
 echo "Checking for personal data..."
 # The District Office address is allowed; blank it out before matching so the
@@ -44,7 +44,17 @@ if [ -n "${hits//[$'\n']/}" ]; then
   exit 1
 fi
 
-rm -f dist/sdccd-travel.zip
-(cd skills && zip -rq ../dist/sdccd-travel.zip sdccd-travel -x '*.DS_Store')
-echo "Built dist/sdccd-travel.zip"
-unzip -l dist/sdccd-travel.zip
+# Two packages from one source: the Claude one uses skills/sdccd-travel as is;
+# the ChatGPT one swaps in platforms/chatgpt/platform.md.
+rm -f dist/*.zip
+BUILD=$(mktemp -d)
+trap 'rm -rf "$BUILD"' EXIT
+
+cp -r skills/sdccd-travel "$BUILD/sdccd-travel"
+(cd "$BUILD" && zip -rq "$OLDPWD/dist/sdccd-travel-claude.zip" sdccd-travel -x '*.DS_Store')
+
+cp platforms/chatgpt/platform.md "$BUILD/sdccd-travel/reference/platform.md"
+(cd "$BUILD" && zip -rq "$OLDPWD/dist/sdccd-travel-chatgpt.zip" sdccd-travel -x '*.DS_Store')
+
+echo "Built:"
+ls -l dist/*.zip
