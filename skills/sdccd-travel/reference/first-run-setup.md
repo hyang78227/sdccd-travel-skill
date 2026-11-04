@@ -12,7 +12,7 @@ Check which is connected and record it as the profile's browser. If neither, say
 
 ## Step 2. Ask the profile questions in one round
 
-Ask all of these together (AskUserQuestion for the multiple-choice ones, plain text for the rest):
+Ask all of these together (a multiple-choice question tool for the multiple-choice ones if you have one, plain text for the rest):
 
 1. Full name and job title
 2. Department / division
@@ -92,8 +92,8 @@ Ask: "Does this look right? Reply yes, or tell me what to change." Apply correct
 ## Step 6. Save the profile
 
 In order of preference:
-1. **Claude memory available** (memory tools present): the traveler's yes in Step 5 is their request to save. Write `/areas/sdccd-travel-profile.md` in the `profile-template.md` format. Read the file first if it exists, and update it rather than overwrite.
-2. **Claude Docs available:** create a doc titled `My SDCCD Travel Profile`.
+1. **Memory available:** the traveler's yes in Step 5 is their request to save. In Claude, write `/areas/sdccd-travel-profile.md` in the `profile-template.md` format (read it first if it exists, and update rather than overwrite). In ChatGPT, save it as one memory that starts `SDCCD TRAVEL PROFILE`.
+2. **A document tool available** (Claude Docs, or a connected folder): save it as `My SDCCD Travel Profile`.
 3. **Neither:** give them the profile as a text block starting `SDCCD TRAVEL PROFILE` and tell them to paste it at the start of future travel chats (or into their Claude project instructions).
 
 Confirm in one line where it was saved and how to change it ("say 'update my travel profile' anytime"). Then continue with what they originally asked, if anything.

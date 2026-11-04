@@ -82,7 +82,7 @@ document.getElementById('claudeUploadHolder').remove();
 w.doModalMFormSubmit_win0(idoc.querySelector('form'), '#ICOK');
 ```
 Fill `ATTACH_DESCR$N`, OK, save. Verify the header reads `Attachments (n)`.
-**If only the pane is available:** deliver the PDF with SendUserFile and give the traveler the five clicks: Attachments → Add Attachment → choose file → Upload → description → OK → Save for Later.
+**If your browser can't upload files:** give the traveler the PDF as a download and give them the five clicks: Attachments → Add Attachment → choose file → Upload → description → OK → Save for Later.
 
 ## P8. Google Maps mileage (the proxy blocks Nominatim/OSRM)
 Open `https://www.google.com/maps/dir/<origin>/<destination>` in a non-portal tab, `get_page_text`, and take the **fewest-miles** route listed (not necessarily the fastest). A "restricted usage or private roads" note usually refers to a gated street near home; ignore it unless the route changes. For the map image use Chrome `computer screenshot` with `save_to_disk: true` (the file lands in the container); the pane's screenshots are also saved to `tool-results/`. Re-measure every trip — routes drift by a mile or two within a month.

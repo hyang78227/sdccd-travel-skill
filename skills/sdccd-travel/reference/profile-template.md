@@ -1,6 +1,6 @@
 # Travel profile format
 
-Save exactly this shape. In Claude memory, save it at `/areas/sdccd-travel-profile.md` with the frontmatter below. In a Claude Doc, title it `My SDCCD Travel Profile` and use the body only. As pasted text, start it with the line `SDCCD TRAVEL PROFILE`.
+Save exactly this shape. In Claude memory, save it at `/areas/sdccd-travel-profile.md` with the frontmatter below. In ChatGPT memory, save the body as one memory starting with the line `SDCCD TRAVEL PROFILE`. In a Claude Doc, title it `My SDCCD Travel Profile` and use the body only. As pasted text, start it with the line `SDCCD TRAVEL PROFILE`.
 
 Every value is something the traveler said or confirmed during setup. Leave a field blank rather than guessing.
 
@@ -32,7 +32,7 @@ aliases: [travel profile, SDCCD travel profile]
 - [stated] FBS contact: <name>
 
 ## Tools
-- [stated] Browser for the portal: <Claude in Chrome | Claude desktop app browser pane>
+- [stated] Browser for the portal: <Claude in Chrome | Claude desktop app browser | ChatGPT desktop app browser (ChatGPT Work)>
 
 ## Conventions (learned from past TAs/ERs, confirmed by the traveler)
 - [stated] mileage_method: <lesser-of | deduct-commute>
