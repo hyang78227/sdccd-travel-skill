@@ -94,7 +94,7 @@ This happens once. Claude asks some questions, looks at their past travel paperw
 
 They create a real TA for their upcoming trip. Claude saves it as **Pending**, which means nothing goes to anyone until they choose to submit.
 
-1. **Ask for it.** They type one sentence with the trip details, for example: **Create a TA for the CCC Data Summit, March 12 to 13, at the Pasadena Convention Center, 300 E Green St, Pasadena 91101.**
+1. **Ask for it.** They type one sentence with the trip details, for example: **Create a TA for the CCC Data Summit, March 12 to 13, at the Pasadena Convention Center, ZIP 91101.**
 2. **Answer the questions.** Claude asks for anything missing in one round: registration cost, hotel, parking, which map to attach. They answer, and upload the registration receipt if asked.
 3. **Check the PDF.** Claude makes **one combined PDF** (mileage map, agenda, receipts). Say: *"Open it and check everything is there and readable."*
 4. **Watch Claude fill the TA.** It enters each line in myportal; it takes a few minutes. Tell them not to click in that tab while it works.

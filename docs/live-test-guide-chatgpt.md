@@ -96,7 +96,7 @@ This happens once. ChatGPT asks some questions, looks at their past travel paper
 
 They create a real TA for their upcoming trip. ChatGPT saves it as **Pending**, which means nothing goes to anyone until they choose to submit.
 
-1. **Ask for it.** They type one sentence with the trip details (folder way: start with "Follow SKILL.md in my Documents/sdccd-travel folder."), for example: **Create a TA for the CCC Data Summit, March 12 to 13, at the Pasadena Convention Center, 300 E Green St, Pasadena 91101.**
+1. **Ask for it.** They type one sentence with the trip details (folder way: start with "Follow SKILL.md in my Documents/sdccd-travel folder."), for example: **Create a TA for the CCC Data Summit, March 12 to 13, at the Pasadena Convention Center, ZIP 91101.**
 2. **Answer the questions.** ChatGPT asks for anything missing in one list: registration cost, hotel, parking, which map to attach. They answer, and upload the registration receipt if asked.
 3. **Download and check the PDF.** ChatGPT makes **one combined PDF** (mileage map, agenda, receipts) to download. Say: *"Download it, open it, and check everything is there and readable. Remember where you saved it."*
 4. **Watch ChatGPT fill the TA.** It enters each line in myportal; this takes several minutes. Tell them not to click in that browser while it works.
