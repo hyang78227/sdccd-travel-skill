@@ -36,24 +36,31 @@ Then, once a browser is available, measure home → regular work location in Goo
 
 **Read only. Never click Save, Submit, Delete, Insert, Update, Copy, or any Actions/GO menu item. Never change a field value.** If a page opens in edit mode (for example a Pending TA), read it and leave without changing anything. If a "save changes?" prompt appears, choose the option that discards/doesn't save.
 
-1. Open **Travel Authorizations → View** (or *Find an Existing Value* with a blank ID, then Search), and list the traveler's TAs with ID, description, dates and status.
-2. Open the **2 most recent TAs that reached Approved** (prefer Approved/Paid over Pending or Sent Back). Then do the same under **Expense Reports → View** for the 2 most recent ERs.
-3. For each one, read the header and every line with one script per page (P3 helper `G()`):
+Use the **View** (inquiry) pages, never Create/Modify: they are read-only by design. Verified path (Nov 2026), all by JS text-match click:
+
+1. Finance Dashboard → sidebar **Travel and Expense Center**. The center's content is in iframe `main_target_win0` (no `ICSID`).
+2. **TAs:** under "Travel Authorizations" click **3 More...** → **View** (component `TE_TAUTH_INQ`). **ERs:** under "Expense Reports" click **2 More...** → **View** (`TE_EXP_SHEET_INQ`). To switch from TAs to ERs, go back to the Finance Dashboard and repeat from step 1.
+3. On the search page leave every field blank and run `G().getElementById('PTS_CFG_CL_WRK_PTS_SRCH_BTN').click()` (a JS click works on this button). Results list ID, description, status and creation date, newest first.
+4. Pick the **2 most recent TAs with status Approved or Closed**, and the **2 most recent ERs with status Paid** (skip In Process, Pending, Denied).
+5. Open a result: the ID text is a `<span>`; click its nearest `[onclick]` ancestor. Move between results with `G().getElementById('#ICNextInList').click()` (`#ICPrevInList`, `#ICList` = back to results).
+6. **TA view** opens on the lines; click **Expand All**. **ER view** opens on a summary page with the **Approval History** (shows any "Sent Back For Revision"); read it, then click `ER_TOOLBAR#DETAILS` for the lines and **Expand All**.
+7. Read the lines with this script (same field ids on TA and ER):
 
 ```js
 const d = G();
-const rows = [...d.querySelectorAll('[id*="$"]')]
-  .filter(e => /\$\d+$/.test(e.id) && !/^IC|^#/.test(e.id))
-  .map(e => ({ id: e.id, v: (e.value ?? e.textContent ?? '').trim() }))
-  .filter(x => x.v);
-const hdr = [...d.querySelectorAll('input,select,span')]
-  .filter(e => e.id && !/\$\d+$/.test(e.id) && /DESCR|BUSINESS|PURPOSE|LOCATION|FROM_DT|TO_DT|STATUS|SHEET_ID|TRAVEL_AUTH/i.test(e.id))
-  .map(e => ({ id: e.id, v: (e.value ?? e.textContent ?? '').trim() }))
-  .filter(x => x.v);
-JSON.stringify({ hdr, rows }).slice(0, 15000);
+const F = ['TRANS_DATE','EXPENSE_TYPE','DESCR','PAYMENT_TYPE','TRANS_AMT1','MILES'];
+const lines = [];
+for (let n = 0; n < 60; n++) {
+  if (!d.getElementById('EXPENSE_TYPE$' + n)) break;
+  const o = {};
+  for (const f of F) { const e = d.getElementById(f + '$' + n); o[f] = e ? (e.value ?? e.textContent).trim() : ''; }
+  lines.push(o);
+}
+const hdr = d.body.innerText.replace(/\s+/g, ' ').match(/(Authorization ID|Report \d{10}).{0,300}/)?.[0];
+({ hdr, lines });
 ```
-   Click **Expand All** first if line details are collapsed. Read chartfields only from what Expand All shows on the lines; never use Actions → GO to open the accounting view. If they aren't visible, ask the traveler.
-4. Look in each one's comments/history for **Sent Back for Revision** reasons.
+   Chartfields are **not shown** on the view pages. Don't go looking for them in Create/Modify or via Actions → GO; ask the traveler (Step 2 already did).
+8. Send-back **reasons** are usually not in the Approval History comments column. If a report was sent back, note that it was and ask the traveler what the reviewer asked for.
 
 Extract:
 
