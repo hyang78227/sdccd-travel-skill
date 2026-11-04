@@ -6,7 +6,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-FILES=(skills platforms docs README.md AGENTS.md CHANGELOG.md .claude-plugin scripts/build.sh)
+FILES=(skills platforms docs scripts/single_file.py README.md AGENTS.md CHANGELOG.md .claude-plugin scripts/build.sh)
 
 echo "Checking for personal data..."
 # The District Office address is allowed; blank it out before matching so the
@@ -56,5 +56,10 @@ cp -r skills/sdccd-travel "$BUILD/sdccd-travel"
 cp platforms/chatgpt/platform.md "$BUILD/sdccd-travel/reference/platform.md"
 (cd "$BUILD" && zip -rq "$OLDPWD/dist/sdccd-travel-chatgpt.zip" sdccd-travel -x '*.DS_Store')
 
+# Single-file versions (SKILL.md with every reference file appended), for AI
+# agents that install a skill from one file (e.g. Claude's "save skill" card).
+python3 scripts/single_file.py skills/sdccd-travel skills/sdccd-travel/reference/platform.md dist/single/claude/SKILL.md
+python3 scripts/single_file.py skills/sdccd-travel platforms/chatgpt/platform.md dist/single/chatgpt/SKILL.md
+
 echo "Built:"
-ls -l dist/*.zip
+ls -l dist/*.zip dist/single/*/SKILL.md

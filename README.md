@@ -10,6 +10,14 @@ The first time you use it, it sets itself up for you: it asks for your name, add
 
 ---
 
+## Fastest way: let your AI install it
+
+Open ChatGPT (desktop app, in Work) or Claude and send:
+
+> **Install the SDCCD travel skill from https://github.com/hyang78227/sdccd-travel-skill. Follow its AGENTS.md.**
+
+It installs what it can and walks you through the rest. In Claude you'll usually just click **Save** on a card; in ChatGPT it asks before putting the folder in your Documents. Prefer to do it by hand? Read on.
+
 ## Step 1: Which AI do you use?
 
 Both do the same job. Pick the one you already have.
@@ -119,9 +127,10 @@ skills/sdccd-travel/              the skill (shared by both versions)
 platforms/chatgpt/platform.md     ChatGPT's version of platform.md
 dist/sdccd-travel-chatgpt.zip     download for ChatGPT
 dist/sdccd-travel-claude.zip      download for Claude
+dist/single/*/SKILL.md            one-file versions, for AI agents that install from a single file
 docs/live-test-guide-chatgpt.md   one-hour setup session script, ChatGPT
 docs/live-test-guide-claude.md    one-hour setup session script, Claude
-AGENTS.md                         instructions for an AI helping someone install
+AGENTS.md                         install recipe AI agents follow
 .claude-plugin/                   Claude Code plugin files
 scripts/build.sh                  builds both zips
 CHANGELOG.md
