@@ -6,7 +6,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-FILES=(skills platforms README.md AGENTS.md CHANGELOG.md .claude-plugin scripts/build.sh)
+FILES=(skills platforms docs README.md AGENTS.md CHANGELOG.md .claude-plugin scripts/build.sh)
 
 echo "Checking for personal data..."
 # The District Office address is allowed; blank it out before matching so the

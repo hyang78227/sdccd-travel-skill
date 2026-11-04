@@ -24,6 +24,8 @@ Both do the same job. Pick the one you already have.
 
 To download a file: click its name above, then the **download** button (arrow pointing down) on the right. **Don't unzip it unless the steps say so.**
 
+**Helping a colleague set it up?** Use the one-hour live test guide for their AI: [ChatGPT guide](docs/live-test-guide-chatgpt.md) · [Claude guide](docs/live-test-guide-claude.md).
+
 ---
 
 ## Install for ChatGPT
@@ -117,6 +119,8 @@ skills/sdccd-travel/              the skill (shared by both versions)
 platforms/chatgpt/platform.md     ChatGPT's version of platform.md
 dist/sdccd-travel-chatgpt.zip     download for ChatGPT
 dist/sdccd-travel-claude.zip      download for Claude
+docs/live-test-guide-chatgpt.md   one-hour setup session script, ChatGPT
+docs/live-test-guide-claude.md    one-hour setup session script, Claude
 AGENTS.md                         instructions for an AI helping someone install
 .claude-plugin/                   Claude Code plugin files
 scripts/build.sh                  builds both zips
