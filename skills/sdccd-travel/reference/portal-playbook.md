@@ -12,7 +12,8 @@ Everything below was verified on real runs in Sep–Oct 2026. Follow it rather t
 
 ## P2. Getting to the form (direct component URLs are blocked)
 URLs like `…/c/ADMINISTER_EXPENSE_FUNCTIONS.TE_TRAVEL_AUTH.GBL` return **"Employee-facing registry content"** — don't use them. Reliable path, all by JS text-match click:
-1. Landing page → click the element whose text is exactly **`Finance Dashboard`**.
+1. Landing page → click the element whose text is exactly **`Finance Dashboard`**. If the landing page is the classic *Employee Service Center* (no Finance Dashboard tile), open the dashboard directly instead — this URL works even though component URLs don't:
+   `https://myportal.sdccd.edu/psc/IHPRD/EMPLOYEE/EMPL/c/NUI_FRAMEWORK.PT_AGSTARTPAGE_NUI.GBL?CONTEXTIDPARAMS=TEMPLATE_ID%3aPTPPNAVCOL&scname=XIH_X_IH_FINANCE_TOP_NAV&PanelCollapsible=Y&PTPPB_GROUPLET_ID=X_IH_FINANCE_SELF_SERVICE&CRefName=X_IH_FINANCE_SELF_SERVICE`
 2. Left sidebar → **`Travel & Expense`** (expands) → **`Travel Authorization`** or **`Expense Report`**.
 3. You land on *Find an Existing Value / Add a New Value*. For a new one click `PTS_CFG_CL_WRK_PTS_ADD_BTN`. To find an existing one click `PTS_CFG_CL_WRK_PTS_PAGE_TOGGLE`, set the ID field (ER: `EX_HDR_SRCH_VW_SHEET_ID`), then click **Search** with a real coordinate click (a JS click on `PTS_CFG_CL_WRK_PTS_CFGASRCHSB_GB` did not run the search).
 The NavBar compass is hidden at the pane's narrow width — don't rely on it.
@@ -87,9 +88,21 @@ Fill `ATTACH_DESCR$N`, OK, save. Verify the header reads `Attachments (n)`.
 
 ## P8. Google Maps mileage (the proxy blocks Nominatim/OSRM)
 Open `https://www.google.com/maps/dir/<origin>/<destination>` in a non-portal tab, `get_page_text`, and take the **fewest-miles** route listed (not necessarily the fastest). A "restricted usage or private roads" note usually refers to a gated street near home; ignore it unless the route changes. For the map image use Chrome `computer screenshot` with `save_to_disk: true` (the file lands in the container); the pane's screenshots are also saved to `tool-results/`. Re-measure every trip — routes drift by a mile or two within a month.
+- **If `get_page_text` shows no miles** (the directions panel sometimes renders only durations), take a **screenshot** instead: it shows every route's miles. Click the **fewest-miles route first** so it's the highlighted line on the map, then screenshot. In Claude's desktop browser, screenshots are saved to the session's `tool-results/` folder, so the same image goes straight into the PDF.
+- Take one screenshot per comparison route (home → venue and work location → venue).
 
 ## P9. Reading shared files
 The Google Drive connector lacks read scope for files shared by link. Open the Drive link in Chrome, read it with `get_page_text`, and capture pages with `computer zoom` + `save_to_disk`. Downloading the original needs the traveler's OK first.
 
 ## P10. Submitting
 Never submit. Stop at **Pending** and hand over: submitting certifies the expenses as the traveler's own, so the traveler clicks **Summary and Submit**, ticks the certification box, and clicks **Submit** themselves. Before handing over, show the final line table, the total and the attachment count. A TA dated in the past, or an ER more than 10 days after the event, asks for a short reason; draft one for the traveler to paste (e.g. "Same-day regional convening confirmed on short notice").
+
+## P11. Reusing a TA's attachments on the ER (no re-upload)
+The approved TA usually already carries the registration receipt, mileage map and agenda. Pull them from the portal instead of asking the traveler to find the files again. **Needs script access in the page** (`platform.md`); without it, ask the traveler to open each attachment and save it.
+1. **Open the TA read-only:** Travel and Expense Center (in the Finance Dashboard sidebar) → under *Travel Authorizations* click **3 More…** → **View** (`TE_TAUTH_INQ`). Leave the search blank, run `PTS_CFG_CL_WRK_PTS_SRCH_BTN` (a script click works on this button), and open the TA: its ID is a `<span>`, so click its nearest `[onclick]` ancestor.
+2. **List the files:** click `EX_TA_HDR_WRK_ATTACHMENTS_PB`. The modal (`ptModFrame_*`) lists each file as `VIEWBUTTON$N`.
+3. **Capture the file address:** `VIEWBUTTON$N` calls `window.open(<file url>)`. Temporarily replace `open` on the top window **and every iframe window** with a function that records the URL and returns `null`, then click `VIEWBUTTON$N`.
+4. **Download it:** `fetch` the recorded URL **from the modal frame's window** (`mf.contentWindow.fetch(url, {credentials:'include'})`), base64 the bytes, and return them between markers (`'BEGIN' + b64 + 'END'`). Do **one file per call**; a combined call can silently drop the largest. A large result is saved by the tool to a results file: extract the text between the markers and base64-decode it to a `.pdf`.
+5. **Restore the page:** reload it (`location.reload()`). Until then the traveler's own clicks on attachments do nothing — tell them if they report that.
+- Don't trigger browser downloads (`<a download>`) to move files: from the desktop browser they don't reliably land in the traveler's Downloads folder.
+- To read a PDF's text in the page without downloading (e.g. checking meals on the agenda): reportlab-made PDFs use `ASCII85Decode` + `FlateDecode` streams; decode ASCII85, inflate with `DecompressionStream('deflate')`, then read the `Tj` / `TJ` strings.

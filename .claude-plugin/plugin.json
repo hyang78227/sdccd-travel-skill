@@ -1,7 +1,7 @@
 {
   "name": "sdccd-travel",
   "description": "File SDCCD Travel Authorizations and Expense Reports in myportal (PeopleSoft) with one combined attachment PDF, stopping before submit. One-time setup learns each traveler's details from their past TAs and ERs.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": { "name": "hyang78227 (community-maintained, not an official SDCCD release)" },
   "keywords": ["sdccd", "travel", "expense-report", "peoplesoft", "travel-authorization"]
 }

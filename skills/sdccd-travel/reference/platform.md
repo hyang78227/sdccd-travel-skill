@@ -23,5 +23,7 @@ Claude memory file `/areas/sdccd-travel-profile.md` (format in `profile-template
 ## Files
 
 - Build PDFs with Python (`reportlab`, `pypdf`, `pymupdf`) in the code workspace; save to the session's outputs folder.
+- **Files on the traveler's computer** (e.g. receipts in Downloads), when the desktop app is linked: ask once for access to that folder (`device_request_folder_access`), then copy the files in with `device_stage_files`. Only request the folder you need.
+- **A TA's existing attachments:** pull them from the portal with P11 (`javascript_tool` works in both Claude browsers).
 - Hand files to the traveler with the file-sending tool (for example `SendUserFile` or `present_files`).
 - Questions: use the multiple-choice question tool (`AskUserQuestion`) when available.

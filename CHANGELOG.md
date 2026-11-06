@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 — 2026-11-05
+
+Lessons from a live expense report:
+- ER: reuse the approved TA's attachments (registration, map, agenda) straight from the portal instead of asking the traveler to re-upload (playbook P11).
+- Portal: direct Finance Dashboard link for when the landing page is the classic Employee Service Center (P2).
+- Mileage: screenshot fallback when Google Maps text shows no miles; highlight the fewest-miles route first (P8).
+- Claude: copy receipts from a folder on the traveler's computer when the desktop app is linked.
+
 ## 1.1.0 — 2026-11-04
 
 - Two downloads from one source: `dist/sdccd-travel-chatgpt.zip` and `dist/sdccd-travel-claude.zip`. Only `reference/platform.md` differs (browser, memory and file tools).

@@ -6,7 +6,7 @@ The first time you use it, it sets itself up for you: it asks for your name, add
 
 > **Not an official SDCCD product.** Community-maintained by SDCCD staff for colleagues. Always review before you submit; district policy and FBS have the final word.
 >
-> **Status:** version 1.1. The Claude version has been used on real TAs and ERs (fall 2026). The ChatGPT version is new; please tell us how it goes (see [Feedback](#feedback)).
+> **Status:** version 1.2. The Claude version has been used on real TAs and ERs (fall 2026). The ChatGPT version is new; please tell us how it goes (see [Feedback](#feedback)).
 
 ---
 

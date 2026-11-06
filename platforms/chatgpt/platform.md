@@ -29,6 +29,7 @@ Use the **built-in browser** in the ChatGPT desktop app.
 ## Files
 
 - Build the combined PDF with Python (`reportlab`, `pypdf`, `pymupdf`) and give the traveler the finished file to download. Ask them to save it where they can find it for the attach step.
+- **A TA's existing attachments:** P11 needs Developer mode (scripts in the page). Without it, ask the traveler to open each attachment on the approved TA and save it, or to upload the files they used for the TA.
 - If you can't run Python, list exactly which pages go into the PDF and in what order, and tell the traveler how to combine them (for example "Print → Save as PDF" or any PDF tool they use).
 - Questions: ask everything missing as one short numbered list.
 

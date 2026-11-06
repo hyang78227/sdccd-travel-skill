@@ -133,7 +133,7 @@ If the traveler corrects themselves mid-run, re-plan the whole line table and re
 
 ### 4.3 Inventory documents, cheapest source first
 1. Session uploads (if they upload one big PDF, extract only the pages they name).
-2. The approved TA's attachments (maps and agenda are usually there).
+2. The approved TA's attachments: registration, maps and agenda are usually there. Pull them straight from the portal (P11) instead of asking the traveler to re-upload.
 3. Their connected email (including any folder they keep per event) and drive. Email connectors often read text only; ask for uploads of attachments you need.
 4. Vendor sites (e.g. airline "past trips → receipt").
 Every row of the documentation checklist (R10) must be **in hand** or **n/a** before building.
