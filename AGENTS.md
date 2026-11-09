@@ -39,6 +39,11 @@ If plugin commands aren't available, copy the folder instead: clone this reposit
 
 Filling myportal needs **Work** in the **ChatGPT desktop app** (Mac or Windows). If they're on the web or phone, have them install the desktop app first: https://chatgpt.com/download
 
+0. **If you can install skills yourself** (ChatGPT **Work** mode can: it has a skill installer and its own skills folder), do that first, without asking about Documents:
+   - Install `skills/sdccd-travel` from this repository as a skill named `sdccd-travel`.
+   - Then copy `platforms/chatgpt/platform.md` over `reference/platform.md` in the installed copy.
+   - Check that the installed `SKILL.md` and `reference/platform.md` exist, and tell the person it's "installed and verified".
+   - Skip steps 1–3 and go to Finish. (Tested in Work mode, November 2026: this takes about a minute, and the person only sends the one sentence.)
 1. **If their ChatGPT has Skills** (sidebar → **Plugins** → **Skills**; work or school plans): have them download the **ChatGPT zip** and upload it there (**Create → Upload from your computer**). If the zip isn't accepted, unzip it and upload the `sdccd-travel` folder. If it shows "Needs Review", their admin must approve it; use step 2 meanwhile.
 2. **Otherwise (Free, Plus, Pro), install it as a folder.** If you can run commands or write files on their computer, ask once: "OK if I download the skill and put it in your Documents folder?" On yes:
    - macOS/Linux:
@@ -67,7 +72,7 @@ Explain that this skill is built for ChatGPT and Claude, link the README (https:
 
 1. Tell them it's installed, and how to start: **"Set up my SDCCD travel profile."** (ChatGPT folder method: put "Follow SKILL.md in my Documents/sdccd-travel folder." in front.)
 2. Tell them, up front:
-   - They always sign in to myportal themselves.
+   - They always sign in to myportal themselves. (In ChatGPT Work mode, setup opens myportal in the built-in browser by itself. If they're already signed in there, it carries on. If not, they sign in in that browser and type **done**.)
    - Setup only **reads** their past TAs and ERs.
    - Nothing is submitted without them.
 3. If they want a guided session, point to the live test guides: `docs/live-test-guide-chatgpt.md` and `docs/live-test-guide-claude.md`.

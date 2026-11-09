@@ -16,7 +16,7 @@ Open ChatGPT (desktop app, in Work) or Claude and send:
 
 > **Install the SDCCD travel skill from https://github.com/hyang78227/sdccd-travel-skill. Follow its AGENTS.md.**
 
-It installs what it can and walks you through the rest. In Claude you'll usually just click **Save** on a card; in ChatGPT it asks before putting the folder in your Documents. Prefer to do it by hand? Read on.
+It installs what it can and walks you through the rest. In Claude you'll usually just click **Save** on a card. In ChatGPT's Work mode it usually installs the skill by itself, with nothing to download and no questions, and says "Installed and verified" in about a minute. Prefer to do it by hand? Read on.
 
 ## Step 1: Which AI do you use?
 
@@ -40,6 +40,9 @@ To download a file: click its name above, then the **download** button (arrow po
 
 **What you need:** the **ChatGPT desktop app** for Mac or Windows ([download from OpenAI](https://chatgpt.com/download)), signed in. Filling myportal happens in **Work** mode, which is only in the desktop app.
 
+### Easiest: let Work mode install it
+Switch to **Work** and send the one sentence from [Fastest way](#fastest-way-let-your-ai-install-it). Work mode installs the skill into its own skills, so you don't need the zip or the Documents folder. When it says "Installed and verified," go to [Then](#then-both-ways). Use one of the manual ways below only if it can't install it for you.
+
 ### If your ChatGPT has "Skills" (work or school plans: Business, Enterprise, Edu)
 1. In ChatGPT, open the sidebar → **Plugins** → **Skills** tab → **Create** → **Upload from your computer**.
 2. Choose `sdccd-travel-chatgpt.zip`. (If it won't take a zip, unzip it and upload the `sdccd-travel` folder instead.)
@@ -52,7 +55,7 @@ To download a file: click its name above, then the **download** button (arrow po
 
 ### Then (both ways)
 4. Say: **"Set up my SDCCD travel profile."** (With the folder method: "Follow SKILL.md in my Documents/sdccd-travel folder. Set up my SDCCD travel profile.")
-5. When ChatGPT needs myportal, open its built-in browser (**Cmd+Shift+B** on Mac, **Ctrl+Shift+B** on Windows), sign in yourself, and type **done**. Allow the websites it asks about.
+5. ChatGPT opens myportal in its built-in browser by itself. If you're already signed in there, it carries on. If not, sign in yourself in that browser and type **done**. If the browser is hidden, **Cmd+Shift+B** (Mac) or **Ctrl+Shift+B** (Windows) shows it. Allow the websites it asks about.
 
 ---
 
